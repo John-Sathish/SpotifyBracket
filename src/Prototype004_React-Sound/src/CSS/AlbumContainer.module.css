@@ -1,0 +1,89 @@
+.albumContainer {
+    text-align: center;
+    margin: 20px;
+}
+
+.albumName {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.albumImage {
+    border-radius: 8px;
+    margin-top: 16px;
+}
+
+.noPreviewMessage {
+    color: #ff0000;
+    margin-top: 5px;
+}
+
+.albumLink {
+    background-color: #1ca94e;
+    border: none;
+    color: black;
+    font-size: 15px;
+    width: 200px;
+    padding: 10px;
+    margin-top: 5px ; 
+    margin-bottom: 5px;
+    border-radius: 21px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.albumLink:hover {
+    transform: scale(1.1);
+}
+
+.playButton:hover{
+    transform: scale(1.1);
+}
+
+.playButton:active {
+    background-color: #18863f;
+}
+
+.bracketAlbum {
+    margin: 5px;
+    border-radius: 8px;
+}
+  
+.bracketAlbum:hover {
+    transform: scale(1.1);
+}
+
+.playButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    filter: invert(100%) grayscale(100%); /* make button white */
+}
+
+.button {
+    background-color: #1ca94e;
+    border: none;
+    color: black;
+    font-size: 15px;
+    width: 200px;
+    padding: 10px;
+    margin-top: 5px ; 
+    margin-bottom: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.buttonIcon {
+    display: block;
+    height: 25px;
+    padding: 2px 0px;
+    width: auto;
+}
