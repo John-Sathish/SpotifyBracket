@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://yellow-bush-0b5ea2203.5.azurestaticapps.net",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
