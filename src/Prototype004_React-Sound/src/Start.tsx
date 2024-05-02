@@ -1,5 +1,5 @@
 import useCookie from "react-use-cookie";
-import { useNavigate } from "react-router";
+import { useNavigate } from 'react-router-dom';
 import { useState } from "react"; // Import useState
 import { extractNewRelease, fetchSavedAlbums, getIDs } from "./SpotifyAPI";
 import styles from "./CSS/Main.module.css";
