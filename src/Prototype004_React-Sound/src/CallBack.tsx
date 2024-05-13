@@ -35,7 +35,7 @@ const CallBack = () => {
         params.append("client_id", clientId);
         params.append("grant_type", "authorization_code");
         params.append("code", code);
-        params.append("redirect_uri", "https://lemon-rock-02226c903.5.azurestaticapps.net/callback/");
+        params.append("redirect_uri", "https://happy-cliff-07c55741e.5.azurestaticapps.net/callback/");
         params.append("code_verifier", verifier!);
     
         const result = await fetch("https://accounts.spotify.com/api/token", {
