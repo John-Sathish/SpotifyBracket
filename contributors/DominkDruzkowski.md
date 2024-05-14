@@ -1,1 +1,0 @@
-## Dominik Druzkowski - psydd5

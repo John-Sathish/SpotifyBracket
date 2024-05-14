@@ -1,1 +1,0 @@
-## Ho Hang Wan - psyhw6
