@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://happy-cliff-07c55741e.5.azurestaticapps.net",
+  "homepage": "https://ambitious-meadow-00ffc051e.5.azurestaticapps.net/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
