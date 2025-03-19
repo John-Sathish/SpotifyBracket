@@ -1,6 +1,6 @@
 import useCookie from 'react-use-cookie';
 import './CSS/LoginPage.css';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import {AlbumInfo,UserInfo,fetchUser,fetchData, fetchSavedAlbums, getIDs} from "./SpotifyAPI";
 import {useEffect, useState} from "react";
 
