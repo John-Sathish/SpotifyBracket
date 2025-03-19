@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import Sound from 'react-sound';
 import useCookie from 'react-use-cookie';
 import { fetchAlbum, AlbumInfo } from "./SpotifyAPI";
 import { useNavigate } from 'react-router-dom'; // Ensure correct import for useNavigate
@@ -23,7 +23,7 @@ const AlbumContainer: React.FC<AlbumContainerProps> = ({ index }) => {
     // State to track if album data is loaded.
     const [loadState, setLoadState] = useState<boolean>(false);
     // State to control the play status of the Sound component.
-    // const [playStatus, setPlayStatus] = useState<Sound.status>(Sound.status.STOPPED);
+    const [playStatus, setPlayStatus] = useState<Sound.status>(Sound.status.STOPPED);
     // Use cookies to persist albums, access token, and ranks between sessions.
     const [albumsCookie, setAlbumsCookie] = useCookie('Albums', '');
     const albums: Array<string> = JSON.parse(albumsCookie || '[]');
@@ -43,9 +43,9 @@ const AlbumContainer: React.FC<AlbumContainerProps> = ({ index }) => {
     }, [accessToken]);
 
     // Function to toggle play status of the track.
-    // const playMusic = () => {
-    //     setPlayStatus(playStatus === Sound.status.PLAYING ? Sound.status.STOPPED : Sound.status.PLAYING);
-    // };
+    const playMusic = () => {
+        setPlayStatus(playStatus === Sound.status.PLAYING ? Sound.status.STOPPED : Sound.status.PLAYING);
+    };
 
     // Function to handle album selection, updating rank, and navigating to album list.
     const beSelected = () => {
@@ -69,10 +69,45 @@ const AlbumContainer: React.FC<AlbumContainerProps> = ({ index }) => {
                     <br />
                     {/* Buttons to control track playback and album selection --------------------------------------------------------*/}
                     {/* Conditional rendering based on the presence of a preview URL */}
-                    
+                    {albumData.preview_url ? (
+                        <>
+                            {/* Button to control track playback */}
+                            {/* <button className={styles.button} onClick={playMusic}>{playStatus === Sound.status.PLAYING ? 'Pause' : 'Play'} Track</button> */}
+                            <button className={styles.playButton} onClick={playMusic}>
+                                <img 
+                                    src={playStatus === Sound.status.PLAYING ? pause : play} 
+                                    alt={playStatus === Sound.status.PLAYING ? 'Pause' : 'Play'}
+                                    className={styles.buttonIcon}
+                                />
+                            </button>
+                            <br />
+
+                            {/* Sound component for playing the preview URL */}
+                            <Sound
+                                url={albumData.preview_url}
+                                playStatus={playStatus}
+                                onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
+                            />
+                        </>
+                    ) : (
+                        <div className={styles.noPreviewMessage}>No preview sound Track.</div>
+                    )}
                     
                     <button className={styles.button} onClick={beSelected}>Pick</button>
-                    
+                    <br />
+                    {/* --------------------------------------------------------------------------------------------------------------*/}
+                    {/* Link to Check the Whole album on Spotify */}
+                    {/* <a className={styles.playButton} href={albumData.album_Url} target="_blank" rel="noopener noreferrer">Album Link on Spotify</a> */}
+                    {/* <button className={styles.playButton} onClick={() => window.open(albumData.album_Url, '_blank', 'noopener noreferrer')}>Album Link on Spotify</button> */}
+                    <br />
+                    {/* Sound component for playing the preview URL, only if album URL is present */}
+                    {albumData.album_Url && (
+                        <Sound
+                            url={albumData.preview_url}
+                            playStatus={playStatus}
+                            onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
+                        />
+                    )}
                     {/* --------------------------------------------------------------------------------------------------------------*/}
 
                 </>

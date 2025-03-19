@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './CSS/App.css';
 import HomeButtonImage from './resources/homeButton.png';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 const ReturnToHome = () => {
     const navigate = useNavigate();

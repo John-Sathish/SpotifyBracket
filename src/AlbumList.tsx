@@ -69,7 +69,7 @@ const AlbumList = () => {
             <h1 className='title'>Bracket View</h1>
             <Sharebutton />
             <HomeButton />
-            {albums.length === 0 && <>Error: Not enough albums to start the game.</>}
+            {albums.length === 0 && <span style={{ color: 'white' }}>Error: Not enough albums to start the game.</span>}
             {albums.length > 0 && (
                 <>
                     <button className='restart-button' onClick={nextScene}>Next</button>

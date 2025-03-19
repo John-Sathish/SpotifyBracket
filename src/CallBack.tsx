@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import useCookie from 'react-use-cookie';
 import './CSS/LoginPage.css';
 
@@ -35,7 +35,7 @@ const CallBack = () => {
         params.append("client_id", clientId);
         params.append("grant_type", "authorization_code");
         params.append("code", code);
-        params.append("redirect_uri", "https://ambitious-meadow-00ffc051e.5.azurestaticapps.net/callback");
+        params.append("redirect_uri", "http://localhost:4173/callback/");
         params.append("code_verifier", verifier!);
     
         const result = await fetch("https://accounts.spotify.com/api/token", {
