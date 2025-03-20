@@ -4,11 +4,7 @@
 </p>
 
 # Spotify Album Game
-- Team21 (University of Nottingham Computer Science 2024)
-- Team Members: 
-  - John Sathish, Nakul Mistry, Peiyan Zou, Archie Blader, Jaipal Bains, Hohang Wan,Yifan Zhu
-  - Sponsor: BJSS
-  - Supervisor: Milena Radenkovic 
+
   
 The Spotify Album Bracket project transforms music listening into a personalised game by 
 integrating with Spotify. Players can engage with New Release Albums and their saved albums in a tournament 
