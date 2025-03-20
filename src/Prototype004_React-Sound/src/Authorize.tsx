@@ -41,7 +41,7 @@ export async function redirectToAuthCodeFlow(clientId: string) {
     const params = new URLSearchParams();
     params.append("client_id", clientId);
     params.append("response_type", "code");
-    params.append("redirect_uri", `${window.location.origin}/SpotifyBracket/callback/`);
+    params.append("redirect_uri", `${window.location.origin}/SpotifyBracket/#/callback`);
     params.append("scope", "user-library-read");
     params.append("code_challenge_method", "S256");
     params.append("code_challenge", challenge);
