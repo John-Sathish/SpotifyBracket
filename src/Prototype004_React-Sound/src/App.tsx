@@ -1,6 +1,6 @@
 import "./CSS/App.css";
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import useCookie from "react-use-cookie";
 import LoginPage from "./LoginPage";
 import Start from "./Start";
@@ -25,7 +25,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route
           path="/"
@@ -50,7 +50,7 @@ function App() {
             <Route path = "/homebutton" element = {<HomeButton />} />
             <Route path = "/usermanual" element = {<UserManual />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
